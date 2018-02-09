@@ -32,27 +32,27 @@ const CSS_OUTPUT_DEST = `${THEME_ASSETS_DIR}/css`;
 gulp.task('build-js', () => {
   return gulp.src(SRC_JS_ENTRY)
     .pipe(babel({ presets: ['env'] }))
-    .pipe(concat('script.js'))
+    .pipe(concat('geeklabel.js'))
     .pipe(gulp.dest(JS_OUTPUT_DEST))
     .pipe(minify({ compress: true }))
-    .pipe(rename('script.min.js'))
+    .pipe(rename('geeklabel.min.js'))
     .pipe(gulp.dest(JS_OUTPUT_DEST));
 });
 
 gulp.task('build-css', () => {
   return gulp.src(SRC_SCSS_ENTRY)
-    .pipe(concat('style.css'))
+    .pipe(concat('geeklabel.css'))
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer())
     .pipe(gulp.dest(CSS_OUTPUT_DEST))
     .pipe(cleanCSS())
-    .pipe(rename('style.min.css'))
+    .pipe(rename('geeklabel.min.css'))
     .pipe(gulp.dest(CSS_OUTPUT_DEST));
 });
 
 gulp.task('zip-all', () => {
   return gulp.src(`${THEME_DIR}/**/*`)
-    .pipe(zip('opencharity.zip'))
+    .pipe(zip('geeklabel.zip'))
     .pipe(gulp.dest(BUILD_DIR));
 });
 
