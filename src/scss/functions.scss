@@ -1,0 +1,8 @@
+
+@function gl-color($name) {
+  @if (map-has-key($colors, $name)) {
+    @return map-get($colors, $name);
+  }
+  @return map-get($colors, default);
+}
+

@@ -1,0 +1,11 @@
+
+$colors: (
+  default: #3E3D3F,
+  primary: #D83454
+);
+
+$bg-colors: (
+  default: #F1F2F2,
+  primary: map-get($colors, primary)
+);
+
